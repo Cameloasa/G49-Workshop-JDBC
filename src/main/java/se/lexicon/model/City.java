@@ -7,6 +7,10 @@ public class City {
     private String cityDistrict;
     private int cityPopulation;
 
+    //Default constructor
+    public City() {
+
+    }
     //Constructor when you want to create a new City
     public City(String cityName, String cityCode, String cityDistrict, int cityPopulation) {
         this.cityName = cityName;
@@ -16,8 +20,6 @@ public class City {
     }
 
     //Constructor when you want to fetch data City table
-
-
     public City(int cityId, String cityName, String cityCode, String cityDistrict, int cityPopulation) {
         this.cityId = cityId;
         this.cityName = cityName;
@@ -46,6 +48,10 @@ public class City {
 
     public int getCityPopulation() {
         return cityPopulation;
+    }
+
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
     }
 
     //toString
