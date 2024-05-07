@@ -119,11 +119,50 @@ public class CountryDaoJDBC implements CountryDao {
 
     @Override
     public Country update(Country country) {
+        String query = "UPDATE Country SET Code = ?, Name = ?," +
+                " Population = ?, Continent = ?, Region = ?, " +
+                "SurfaceArea = ?,  IndepYear = ?, LifeExpectancy = ?, " +
+                "GNP = ?, GNPOld = ?, LocalName = ?, GovernmentForm = ?, " +
+                "HeadOfState = ?, Capital = ?, Code2 = ? WHERE Code = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setString(1, country.getCode());
+            stmt.setString(2, country.getCountryName());
+            stmt.setInt(3, country.getPopulation());
+            stmt.setString(4, country.getContinent().toString());
+            stmt.setString(5, country.getRegion());
+            stmt.setFloat(6, country.getSurfaceArea());
+            stmt.setInt(7, country.getIndepYear());
+            stmt.setFloat(8, country.getLifeExpectancy());
+            stmt.setFloat(9, country.getGnp());
+            stmt.setFloat(10, country.getGnpOld());
+            stmt.setString(11, country.getLocalName());
+            stmt.setString(12, country.getGovernmentForm());
+            stmt.setString(13, country.getHeadOfState());
+            stmt.setInt(14, country.getCapital());
+            stmt.setString(15, country.getCode2());
+            stmt.setString(16, country.getCode());
+            int affectedRows =  stmt.executeUpdate();
+            if (affectedRows == 1) {
+                return country;
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
     @Override
     public boolean delete(Country country) {
+        String query = "DELETE FROM Country WHERE Code = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setString(1, country.getCode());
+            int affectedRows = stmt.executeUpdate();
+            if (affectedRows == 1) {
+                return true;
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 }
