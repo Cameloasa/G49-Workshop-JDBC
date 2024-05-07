@@ -5,7 +5,7 @@ import se.lexicon.model.Country;
 import java.util.List;
 
 public interface CountryDao {
-    Country findById(String code);
+    Country findByCode(String code);
     List<Country> findAll();
     Country add(Country country);
     Country update(Country country);

@@ -4,18 +4,18 @@ public class Country {
     private String code; //code char(3) PK
     private String countryName;// char(52)
     private Continent continent; //Continent enum('Asia','Europe','North America','Africa','Oceania','Antarctica','South America')
-    private String Region; //char(26)
-    private float SurfaceArea;// float(10,2)
-    private int IndepYear;// smallint
-    private int Population ;//int
-    private float LifeExpectancy; // float(3,1)
-    private float  GNP;//float(10,2)
-    private float GNPOld; //float(10,2)
-    private String LocalName; // char(45)
-    private String GovernmentForm;// char(45)
-    private String HeadOfState; //char(60)
-    private int Capital;// int
-    private String Code2; //Code2 char
+    private String region; //char(26)
+    private float surfaceArea;// float(10,2)
+    private int indepYear;// smallint
+    private int population ;//int
+    private float lifeExpectancy; // float(3,1)
+    private float  gnp;//float(10,2)
+    private float gnpOld; //float(10,2)
+    private String localName; // char(45)
+    private String governmentForm;// char(45)
+    private String headOfState; //char(60)
+    private int capital;// int
+    private String code2; //Code2 char
 
     //default constructor
     public Country() {
@@ -24,23 +24,24 @@ public class Country {
 
     //constructor
 
-    public Country(String code, String countryName, Continent continent, String region, float surfaceArea, int indepYear, int population, float lifeExpectancy, float GNP, float GNPOld, String localName, String governmentForm, String headOfState, int capital, String code2) {
+    public Country(String code, String countryName, Continent continent, String region, float surfaceArea, int indepYear, int population, float lifeExpectancy, float gnp, float gnpOld, String localName, String governmentForm, String headOfState, int capital, String code2) {
         this.code = code;
         this.countryName = countryName;
         this.continent = continent;
-        Region = region;
-        SurfaceArea = surfaceArea;
-        IndepYear = indepYear;
-        Population = population;
-        LifeExpectancy = lifeExpectancy;
-        this.GNP = GNP;
-        this.GNPOld = GNPOld;
-        LocalName = localName;
-        GovernmentForm = governmentForm;
-        HeadOfState = headOfState;
-        Capital = capital;
-        Code2 = code2;
+        this.region = region;
+        this.surfaceArea = surfaceArea;
+        this.indepYear = indepYear;
+        this.population = population;
+        this.lifeExpectancy = lifeExpectancy;
+        this.gnp = gnp;
+        this.gnpOld = gnpOld;
+        this.localName = localName;
+        this.governmentForm = governmentForm;
+        this.headOfState = headOfState;
+        this.capital = capital;
+        this.code2 = code2;
     }
+
 
     //getters
 
@@ -58,51 +59,111 @@ public class Country {
     }
 
     public String getRegion() {
-        return Region;
+        return region;
     }
 
     public float getSurfaceArea() {
-        return SurfaceArea;
+        return surfaceArea;
     }
 
     public int getIndepYear() {
-        return IndepYear;
+        return indepYear;
     }
 
     public int getPopulation() {
-        return Population;
+        return population;
     }
 
     public float getLifeExpectancy() {
-        return LifeExpectancy;
+        return lifeExpectancy;
     }
 
-    public float getGNP() {
-        return GNP;
+    public float getGnp() {
+        return gnp;
     }
 
-    public float getGNPOld() {
-        return GNPOld;
+    public float getGnpOld() {
+        return gnpOld;
     }
 
     public String getLocalName() {
-        return LocalName;
+        return localName;
     }
 
     public String getGovernmentForm() {
-        return GovernmentForm;
+        return governmentForm;
     }
 
     public String getHeadOfState() {
-        return HeadOfState;
+        return headOfState;
     }
 
     public int getCapital() {
-        return Capital;
+        return capital;
     }
 
     public String getCode2() {
-        return Code2;
+        return code2;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
+    }
+
+    public void setContinent(Continent continent) {
+        this.continent = continent;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public void setSurfaceArea(float surfaceArea) {
+        this.surfaceArea = surfaceArea;
+    }
+
+    public void setIndepYear(int indepYear) {
+        this.indepYear = indepYear;
+    }
+
+    public void setPopulation(int population) {
+        this.population = population;
+    }
+
+    public void setLifeExpectancy(float lifeExpectancy) {
+        this.lifeExpectancy = lifeExpectancy;
+    }
+
+    public void setGnp(float gnp) {
+        this.gnp = gnp;
+    }
+
+    public void setGnpOld(float gnpOld) {
+        this.gnpOld = gnpOld;
+    }
+
+    public void setLocalName(String localName) {
+        this.localName = localName;
+    }
+
+    public void setGovernmentForm(String governmentForm) {
+        this.governmentForm = governmentForm;
+    }
+
+    public void setHeadOfState(String headOfState) {
+        this.headOfState = headOfState;
+    }
+
+    public void setCapital(int capital) {
+        this.capital = capital;
+    }
+
+    public void setCode2(String code2) {
+        this.code2 = code2;
     }
 
     //toString
@@ -113,18 +174,18 @@ public class Country {
                 "code='" + code + '\'' +
                 ", countryName='" + countryName + '\'' +
                 ", continent=" + continent +
-                ", Region='" + Region + '\'' +
-                ", SurfaceArea=" + SurfaceArea +
-                ", IndepYear=" + IndepYear +
-                ", Population=" + Population +
-                ", LifeExpectancy=" + LifeExpectancy +
-                ", GNP=" + GNP +
-                ", GNPOld=" + GNPOld +
-                ", LocalName='" + LocalName + '\'' +
-                ", GovernmentForm='" + GovernmentForm + '\'' +
-                ", HeadOfState='" + HeadOfState + '\'' +
-                ", Capital=" + Capital +
-                ", Code2='" + Code2 + '\'' +
+                ", region='" + region + '\'' +
+                ", surfaceArea=" + surfaceArea +
+                ", indepYear=" + indepYear +
+                ", population=" + population +
+                ", lifeExpectancy=" + lifeExpectancy +
+                ", gnp=" + gnp +
+                ", gnpOld=" + gnpOld +
+                ", localName='" + localName + '\'' +
+                ", governmentForm='" + governmentForm + '\'' +
+                ", headOfState='" + headOfState + '\'' +
+                ", capital=" + capital +
+                ", code2='" + code2 + '\'' +
                 '}';
     }
 }
